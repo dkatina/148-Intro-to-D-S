@@ -82,3 +82,37 @@ Big O notation is the measurement scale we use to lable the efficiency of our so
 **Linear**: for loops, many built-in methods(count,index,replace,etc.) (any time you need to perform an operation FOR every item in the input)
 **Linear Logrithmic**: Sorting functions (.sort(), sorted())
 **Quadractic**: Whenever you have nested Linear operations you (Nested for loops, .count() inside a for loop)
+
+### Time and Space Complexity of Python Lists
+
+**Accessing Elements**: Indexing into a list happens in constant time
+```python
+treasures = ['gold', 'gems', 'diamonds']
+print(treasures[1])  # Accessing the second stone
+```
+
+**Adding Elements**
+- **.append()**: happens in constant time O(1), becuase this process doesn't involve moving/rearranging the items already in the list.
+- **.insert()**: Requires the rearrangement for pre-existing elements to accomodate the incoming element, which makes it O(n) linear
+
+**Removing Elements**: 
+.remove() is also Linear, becuase once the item is removed, the other items have to slide over to fill in the gaps.
+**Sorting Elements**: 
+.sort(), is based off of the Timsort algorith which is O(n logn)
+
+**Membership Checks**:
+When checking if an element is **IN** a list, python works through each element comparing it to the one we are looking for. This makes list membership checks O(n) Linear
+
+### Time and Space Complexity of Python Dictionaries
+
+**Adding Elements**
+Because Dictionaries are unordered, there is no 'insert' in the middle or 'append' to the end. We simply add it to the collection and this happens in constant time
+
+**Accessing Elements**
+We unlock values stored in our dictionaries with keys, and when we key into the dictionary this also happens in constant time O(1).
+
+**Deleting Elements**
+Again, because there is no order to dictionaries, when we remove items, there is no space to be filled causing other items to have to move. So deleting is also constant.
+
+**Membership Checks**:
+Because all keys of a dictionary are unique, when we go to see if a key exists in our dictionary, it is just as quick as trying to access this value. Therefor membership checks also happen in constant time O(1)
