@@ -13,6 +13,8 @@ With the primary function of data structures being to store information, each da
 
 ##### Lists:
 Lists are ordered collections of items, allowing for sequential storage and retrieval
+
+Because lists are ordered, I can access items within a list based on that item's position i.e their index
 ```python
 # Example of a list in the library
 fiction_books = ["Dune", "1984", "Brave New World", "Neuromancer"]
@@ -20,6 +22,8 @@ fiction_books = ["Dune", "1984", "Brave New World", "Neuromancer"]
 
 ##### Dictionaries:
 Dictionaries are key-value pairs, providing a fast and flexible way to retrieve information.
+
+*reminder*: All Keys must be unique, and if you try to add a key-value pair with an identical key it will overwrite what is currently in the dictionary
 
 ```python
 # Example of a dictionary in the library
@@ -77,6 +81,8 @@ Big O notation is the measurement scale we use to lable the efficiency of our so
 
 ![Big O Graph](https://miro.medium.com/v2/resize:fit:1400/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg)
 
+https://www.bigocalc.com/
+
 **Constant**: Assignment operations, math operations, and comparison operations.
 **Logrithmic**: Binary Search (we'll learn this later)
 **Linear**: for loops, many built-in methods(count,index,replace,etc.) (any time you need to perform an operation FOR every item in the input)
@@ -96,7 +102,10 @@ print(treasures[1])  # Accessing the second stone
 - **.insert()**: Requires the rearrangement for pre-existing elements to accomodate the incoming element, which makes it O(n) linear
 
 **Removing Elements**: 
-.remove() is also Linear, becuase once the item is removed, the other items have to slide over to fill in the gaps.
+.remove() is also Linear, becuase once the item is removed, the other items have to slide over to fill in the gaps. This is why lists don't behave as **queues** because removing the first element doesn't happen in constant time
+
+.pop() When not specifying an index, and removing from the end, happens in constant time O(1). This is why lists are able to behave as **stacks**
+
 **Sorting Elements**: 
 .sort(), is based off of the Timsort algorith which is O(n logn)
 
@@ -106,13 +115,13 @@ When checking if an element is **IN** a list, python works through each element 
 ### Time and Space Complexity of Python Dictionaries
 
 **Adding Elements**
-Because Dictionaries are unordered, there is no 'insert' in the middle or 'append' to the end. We simply add it to the collection and this happens in constant time
+Because Dictionaries are unordered, there is no 'insert' in the middle or 'append' to the end. We simply add it to the collection and this happens in constant time O(1)
 
 **Accessing Elements**
 We unlock values stored in our dictionaries with keys, and when we key into the dictionary this also happens in constant time O(1).
 
 **Deleting Elements**
-Again, because there is no order to dictionaries, when we remove items, there is no space to be filled causing other items to have to move. So deleting is also constant.
+Again, because there is no order to dictionaries, when we remove items, there is no space to be filled causing other items to have to move. So deleting is also constant O(1).
 
 **Membership Checks**:
 Because all keys of a dictionary are unique, when we go to see if a key exists in our dictionary, it is just as quick as trying to access this value. Therefor membership checks also happen in constant time O(1)
